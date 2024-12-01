@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin</title>
+    <link rel="stylesheet" href="./css/admin.css" />
+
+</head>
+<body>
+    <div class="heading">
+        <h2>Công ty quần áo</h2>
+        <p class = "message">
+        </p>
+    </div>
+    <div class = "tab-container">
+        <div class = "tab" data-tab-target = "#manage-product">
+            Quản lý sản phẩm
+        </div>
+        <div class = "tab" data-tab-target = "#manage-user">
+            Quản lý người dùng
+        </div>
+        <div class="tab" data-tab-target="#manage-order">
+            Quản lý đơn hàng
+        </div>
+        <div class = "tab" data-tab-target = "#statistics">
+            Xác xuất thống kê
+        </div>
+    </div>
+    <dialog class = "login-modal">
+        <form>
+            <label for = "username">
+                Tên tài khoản:
+            </label>
+            <br>
+            <input name = "username" type = "text">
+            <br>
+            <label for="password">
+                Mật khẩu:
+            </label>
+            <br>
+            <input name="password" type="password">
+            <br>
+            <button class = "login-button">Nhập</button>
+        </form>
+    </dialog>
+    <div id="manage-product" class="tab-content">
+        <h1>
+            Quản lý sản phẩm
+        </h1>
+        <button data-function = "open-create-product-modal">
+            Thêm sản phẩm
+        </button>
+        <hr>
+        <h2>
+            Tìm kiếm sản phẩm
+        </h2>
+        <form  class = "search-form">
+            <div>
+                <label for="product-title">
+                    Id:
+                </label>
+                <br>
+                <input name="product-id" type="text" />
+            </div>
+            <div>
+                <label for="product-title">
+                    Tên sản phẩm:
+                </label>
+                <br>
+                <input name="product-title" type="text" />
+            </div>
+            <div>
+                <label for="product-category">
+                    Loại:
+                </label>
+                <br>
+                <select name="product-category" class="product-category">
+                </select>
+            </div>
+            <div>
+                <label for="min-product-price">
+                    Giá thấp nhất :
+                </label>
+                <br>
+                <input name="min-product-price" type="text" />
+                <br>
+                <label for="max-product-price">
+                    Giá cao nhất :
+                </label>
+                <br>
+                <input name="max-product-price" type="text" />
+            </div>            
+            <div style = "display: flex; justify-content: center; align-items: center;">
+                <button class="search-product-button">
+                    Tìm kiếm
+                </button>
+            </div>
+        </form>
+        <hr>
+        <table class = "product-search-result-table">
+            <tr>
+                <th>
+                    ID
+                </th>
+                <th>
+                    Tên sản phẩm
+                </th>
+                <th>
+                    Loại
+                </th>
+                <th>
+                    Giá
+                </th>
+                <th>
+                    Hình ảnh
+                </th>
+                <th>
+                    Sửa
+                </th>
+                <th>
+                    Xóa
+                </th>
+            </tr>
+            
+        </table>
+        <div style = "text-align: center;">
+            <button class = "previous-product-search-result-button">
+                <
+            </button>
+            <button class="next-product-search-result-button">
+                > 
+            </button>
+        </div>
+
+        <dialog class = "create-update-modal">
+            <button class = "close-modal-button">
+                X
+            </button>
+            <form>
+                <label for = "product-title">
+                    Tên sản phẩm:
+                </label>
+                <br>
+                <input name = "product-title" type = "text"/>
+                <br>
+                <label for="product-category">
+                    Loại:
+                </label>
+                <br>
+                <select name="product-category" class="product-category">
+                </select>
+                <br>
+                <label for="product-price">
+                    Giá đơn vị :
+                </label>
+                <br>
+                <input name="product-price" type="text" />
+                <br>
+                <label for="product-image">
+                    Hình ảnh: 
+                </label>
+                <br>
+                <div>
+                    <img class = "product-image-element" style = "width: 30px; height: 60px"/>
+                    <br>
+                    <input name="product-image" accept = "image/*" type="file" />
+                </div>
+                <button class = "create-update-product-button">
+                    
+                </button>
+            </form>
+
+        </dialog>
+        <dialog class = "delete-product-modal">
+            <h1>Bạn có chắc muốn xóa</h1>
+            <button class = "confirm deletion-button">
+                Có
+            </button>
+            <button class = "deny deletion-button">
+                Không
+            </button>
+        </dialog>
+    </div>
+    <div id = "manage-user" class = "tab-content">
+        <h1>
+            Quản lý người dùng
+        </h1>
+        <button data-function = "open-create-account-modal">
+            Thêm người dùng
+        </button>
+        <hr>
+        <h2>
+            Tìm kiếm người dùng
+        </h2>
+        <form class = "search-account-form">
+            <div>
+                <label for="account-id">Id</label><br>
+                <input name="account-id" type="text" />
+            </div>
+            <div>
+                <label for="account-username">Tên người dùng:</label><br>
+                <input name="account-username" type="text" />
+            </div>
+            <div>
+                <label for="account-password">Mật khẩu</label><br>
+                <input name="account-password" type="password" />
+            </div>
+            <div>
+                <label for="account-address">Địa chỉ: </label><br>
+                <input name="account-address" type="text" />
+            </div>
+            <div>
+                <label for="account-locked">Khóa: </label><br>
+                <input name="account-locked" type="checkbox" />
+            </div>
+            <button class = "search-account-button">
+                Tìm kiếm
+            </button>
+        </form>
+        <hr>
+        <table class = "search-result-account-table">
+            <tr><th>Id</th><th>Tên tài khoản</th><th>Mật khẩu</th><th>Địa chỉ</th><th>Khóa</th><th>Nút sửa</th></tr>
+        </table>
+        <div style ="text-align: center;">
+            <button class = "previous-account-search-result-button">
+                <
+            </button>
+            <button class = "next-account-search-result-button">
+                > 
+            </button>
+        </div>
+        <dialog class="create-update-account-modal">
+            <button class="close-modal-button">
+                X
+            </button>
+            <form>
+                <label for = "username">Tên tài khoản</label><br><input name = "username" type = "text"/><br>
+                <label for="password">Mật khẩu</label><br><input name="password" type="password" /><br>
+                <label for="address">Địa chỉ</label><br><input name="address" type="text" /><br>
+                <label for="locked">Khóa</label><br><input name="locked" type="checkbox" /><br>
+
+                <button class="create-update-account-button">
+                    
+                </button>
+            </form>
+        </dialog>
+    </div>
+    <div id="manage-order" class="tab-content">
+        <h1>
+            Quản lý đơn hàng
+        </h1>
+        <hr>
+        <form class="search-order-form">
+            <div>
+                <label for="order-province">Quận: </label><br>
+                <select name="order-province">
+                    <option disabled="disabled" selected="selected" value = "">Chọn quận:</option>
+                </select>
+            </div>
+            <div>
+                <label for="order-status">Tình trạng </label><br>
+                <select name="order-status">
+                    <option disabled="disabled" selected="selected" value = "">Chọn tình trạng:</option>
+                    <option>chưa xử lý</option>
+                    <option>đã xác nhận</option>
+                    <option>đã giao thành công</option>
+                    <option>đã huỷ</option>
+                </select>
+            </div>
+            <div>
+                <label for="order-earliest-datetime">Thời gian sớm nhất: </label><br>
+                <input name="order-earliest-datetime" type="datetime-local" />
+            </div>
+            <div>
+                <label for="order-latest-datetime">Thời gian trễ nhất: </label><br>
+                <input name="order-latest-datetime" type="datetime-local" />
+            </div>
+            <button class="search-order-button">
+                Tìm kiếm
+            </button>
+        </form>
+        <hr>
+        <table class="search-result-order-table">
+            <tr>
+                <th>Id</th>
+                <th>Tình trạng</th>
+                <th>Thời gian</th>
+                <th>Địa chỉ</th>
+                <th>Quận</th>
+                <th>Huyện</th>
+                <th>Nút sửa</th>
+                <th>
+                    Nút xem chi tiết
+                </th>
+            </tr>
+        </table>
+        <div style="text-align: center;">
+            <button class="previous-order-search-result-button">
+                < 
+            </button>
+            <button class="next-order-search-result-button">
+                >
+            </button>
+        </div>
+    </div>
+    <div id="statistics" class = "tab-content">
+        <h1>
+            Xác suất thống kê
+        </h1>
+        <hr>
+        <form class = "statistics-form">
+            <div>
+                <label for="min-date">Thời gian sớm nhất:</label><br>
+                <input name="min-date" type="datetime-local">
+            </div>
+            <div>
+                <label for="max-date">Thời gian trễ nhất:</label><br>
+                <input name="max-date" type="datetime-local">
+            </div>
+            <div>
+                <label for="statistic-option">Phương thức thống kê:</label><br>
+                <select name="statistic-option">
+                    <option>
+                        Mặt hàng
+                    </option>
+                    <option>
+                        Đầu khách hàng
+                    </option>
+                </select>
+            </div>
+            <div>
+                <button class = "show-statistics-button">Thống kê</button>
+            </div>
+        </form>
+        <hr>
+        <div class = "product-option" style = "justify-content: space-evenly;">
+            <div>
+                    <h2 >
+                        Tổng doanh thu :
+                    </h2>
+                    <div class ="total-income">
+
+                    </div>
+            </div>
+            <hr>
+            <div>
+                <h2>
+                    Mặt hàng bán chạy nhất:
+                </h2>
+                <div class="sold-the-most-product">
+                
+                </div>
+                <h2>
+                    Mặt hàng bán ế nhất:
+                </h2>
+                <div class = "sold-the-least-product">
+
+                </div>
+            </div>
+            <hr>
+            <div>
+                <h2>
+                    Danh sách sản phẩm
+                </h2>
+                <table style="margin-left: auto; margin-right: auto;" class="related-order-table">
+                    
+                    <tr>
+                        <th>Id</th>
+                        <th>Tên sản phẩm</th>
+                        <th>Số lượng bán ra</th>
+                        <th>Tổng thu</th>
+                        <th>
+                            Nút xem các hóa đơn
+                        </th>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="user-option" style="justify-content: space-evenly;">
+            <div>
+                <h2>
+                    Khách hàng phát sinh doanh thu nhiều nhất:
+                </h2>
+            </div>
+        </div>
+        <hr>
+
+        <dialog class="order-details-statistic-modal" >
+            <button class="close-modal-button">X</button>
+            <table>
+                <tr>
+        
+                </tr>
+            </table>
+        </dialog>
+        
+
+    </div>
+    <dialog class="popup-message">
+        <h3>
+        </h3>
+    </dialog>
+
+    <script src = "scripts/admin.js">
+    </script>
+</body>
+</html>

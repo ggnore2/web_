@@ -1,0 +1,244 @@
+body {
+    padding: 0px;
+    margin: 0px;
+}
+
+/* heading link*/
+.heading-link {
+    text-decoration: none;
+    color: black;
+}
+
+/* heading link*/
+
+/* category navigation */
+.category-navigation {
+    display: flex;
+}
+
+
+.category-navigation .drop-down button {
+    background-color: hsl(0, 0%, 80%);
+    border: none;
+    font-size: 20px;
+    padding: 10px 15px;
+    color: white;
+}
+
+.category-navigation .content {
+    display: none;
+    position: absolute;
+    background-color: hsl(0, 0%, 90%);
+    box-shadow: 2px 2px 5px black;
+}
+
+.category-navigation .drop-down a {
+    display: block;
+    padding: 10px 15px;
+}
+
+
+.category-navigation .drop-down:hover .content {
+    display: block;
+}
+
+.category-navigation .drop-down button:hover {
+    background-color: hsl(0, 0%, 70%);
+}
+
+.category-navigation .drop-down a:hover {
+    background-color: hsl(0, 0%, 70%);
+}
+
+/* category navigation */
+
+
+/* logout button */
+.logout-button {
+    background-color: rgba(255, 255, 255, 1);
+    border: 0;
+    font-size: medium;
+}
+
+.logout-button:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.logout-button.inactive {
+    display: none;
+}
+
+/*logout button*/
+
+/* modal button */
+.modal-button {
+    background-color: rgba(255, 255, 255, 1);
+    border: 0;
+    font-size: medium;
+}
+
+.modal-button:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.modal-button.inactive {
+    display: none;
+}
+
+/* modal button */
+
+/* modal form */
+.heading {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border: 1px solid black;
+}
+
+.close-modal-button {
+    float: right;
+    background-color: white;
+    font-size: large;
+    border: none;
+}
+
+.close-modal-button~* {
+    clear: both;
+}
+
+
+/* modal form */
+
+/* Product card*/
+.product-card-container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.product-card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    text-align: center;
+    font-family: arial;
+    width: 20%;
+    margin: 20px;
+
+}
+
+.product-card .price {
+    color: grey;
+    font-size: 22px;
+}
+
+.product-card button {
+    border: none;
+    outline: 0;
+    padding: 12px;
+    color: white;
+    background-color: #000;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    font-size: 18px;
+}
+
+.product-card button:hover {
+    opacity: 0.7;
+}
+
+/* Product card */
+
+/* select modal */
+.modal-form.select-modal-form {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.modal-form.select-modal-form img {
+    width: 50%;
+}
+
+.modal-form.select-modal-form div {
+    padding: 20px;
+    margin: 20px;
+    width: 50%;
+    border-left: 1px solid black;
+}
+
+/* select modal */
+
+/* checkout modal */
+
+/*| tên sản phẩm | giá | số lượng | thời gian đặt hàng | tình trạng */
+
+
+#checkout-modal>div {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#checkout-modal div div {
+    overflow-y: scroll;
+    padding: 10px;
+}
+
+#checkout-modal div form {
+    width: 60%;
+    border-right: 1px solid black;
+}
+
+.shopping-cart-table {
+    width: 100%;
+}
+
+.shopping-cart-table * {
+    border: 1px solid black;
+}
+
+.shopping-cart-table tr td,
+.shopping-cart-table tr th {
+    text-align: center;
+}
+
+/* checkout modal */
+
+/* search form */
+.search-form {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.search-form * {
+    font-size: 20px;
+}
+
+/* search form */
+
+/* arrow button */
+.arrow-button {
+    background-color: white;
+    margin: 10px;
+}
+
+.arrow-button:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+/*  */
+
+.modal-form.checkout-modal-form select[name="district"] {
+    width: 150px;
+    text-wrap: wrap;
+}
+
+
+/*  */
+
+tr, th, td{
+    border: 1px solid black;
+    padding: 10px;
+}

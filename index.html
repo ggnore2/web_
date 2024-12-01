@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang chủ</title>
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+
+<body>
+    <div class="heading">
+        <h1>
+            <a href="./index.html " class="heading-link">
+                Công ty quần áo
+            </a>
+        </h1>
+        <div>
+            <button data-target-modal="#sign-up-modal" class="modal-button">
+                Đăng ký
+            </button>
+            <button data-target-modal="#login-modal" class="modal-button">
+                Đăng nhập
+            </button>
+            <button class="logout-button inactive">
+                Đăng xuất
+            </button>
+            <button data-target-modal="#view-order-modal" class="modal-button inactive">
+                Xem đơn hàng
+            </button>
+            <button data-target-modal="#checkout-modal" class="modal-button inactive">
+                Thanh toán
+            </button>
+            <a href="./search.html" style = "text-decoration: none; color : black; margin-left: 10px">
+                Tìm kiếm
+            </a>
+        </div>
+    </div>
+    <div class="category-navigation">
+        <!-- <div class = "drop-down">
+                <button>
+                    Áo
+                </button>
+                <div class="content">
+                    <a href = "./search.html?product-category = áo sơ mi">áo sơ mi</a>
+                    <a>áo sơ mi</a>
+                    <a>áo sơ mi</a>
+                </div>
+            </div>
+            <div class="drop-down">
+                <button>
+                    Áo
+                </button>
+                <div class="content">
+                    <a>áo sơ mi</a>
+                    <a>áo sơ mi</a>
+                    <a>áo sơ mi</a>
+                </div>
+            </div> -->
+    </div>
+    <img src="assets/advertising-image.png" style="width: 100%;">
+    <h2>
+        Trưng bày sản phẩm:
+    </h2>
+    <div class="product-card-container">
+        <!-- <div class = "product-card">
+            <img src = "/assets/advertising-image.png" width = "100%"/>
+            <h2>Tên sản phẩm</h2>
+            <p class = "price" >Giá:</p>
+            <p><button class = "add-to-cart-button">Bỏ vào giỏ hàng</button></p>            
+            
+        </div> -->
+    </div>
+    <dialog id="sign-up-modal">
+        <button class="close-modal-button">X</button>
+        <h3>Đăng ký</h3>
+        <form class="modal-form">
+            <label for="username">Tên đăng nhập: </label>
+            <br>
+            <input name="username" type="text" />
+            <br>
+            <label for="password">Mật khẩu: </label>
+            <br>
+            <input name="password" type="password" />
+            <br>
+            <label for="address">Địa chỉ: </label>
+            <br>
+            <input name="address" type="text" />
+            <br>
+            <button type="button" class="process-button">
+                Đăng ký
+            </button>
+        </form>
+    </dialog>
+
+    <dialog id="login-modal">
+        <button class="close-modal-button">X</button>
+        <h3>Đăng nhập</h3>
+        <form class="modal-form">
+            <label for="username">Tên đăng nhập: </label>
+            <br>
+            <input name="username" type="text" />
+            <br>
+            <label for="password">Mật khẩu: </label>
+            <br>
+            <input name="password" type="password" />
+            <br>
+            <button type="button" class="process-button">
+                Đăng nhập
+            </button>
+        </form>
+    </dialog>
+    <dialog class="popup-message">
+        <h3>
+        </h3>
+    </dialog>
+    <!-- <dialog class = "select-modal">
+        <button class="close-modal-button">X</button>
+        <form class = "modal-form select-modal-form">
+            <img src = "assets/advertising-image.png">
+            <div>
+                <h2>Tên sản phẩm</h2>
+                <h3>Giá:</h3>
+                <label for="size">Kích cỡ:</label>
+                <br>
+                <select name="size">
+                </select>
+                <br>
+                <br>
+                <button class= "add-to-cart-button" type = "button">Bỏ vào giỏ hàng</button>
+            </div>
+        </form>
+    </dialog> -->
+
+    <dialog id="checkout-modal">
+        <button class="close-modal-button">X</button>
+        <div style="display: flex; justify-content: space-between;">
+            <form class="modal-form checkout-modal-form">
+                <h2>Thanh toán</h2>
+                <label for = "province">
+                    Tỉnh thành* : 
+                </label>
+                <br>
+                <select name = "province">
+
+                </select>
+                <br>
+                <label for="district">
+                    Quận huyện* :
+                </label>
+                <br>
+                <select name="district">
+                
+                </select>
+                <br>
+                <div style = "border: 1px solid black;">
+                    <label for="use-provided-address">
+                        Sử dụng địa chỉ đã cung cấp:
+                    </label>
+                    <br>
+                    <input name="use-provided-address" type="checkbox" />
+                    <div class = "new-address">
+                        <label for="address">
+                            Địa chỉ mới:
+                        </label>
+                        <input name="address" type="text" />
+                    </div>
+                </div>
+                <br>
+                <label for="payment-method">
+                    Hình thức thanh toán:
+                </label>
+                <br>
+                <select name="payment-method">
+                    <option>
+                        Tiền mặt
+                    </option>
+                    <option>
+                        Thẻ ATM
+                    </option>
+                </select>
+                <section class="card-info" style="display: none;">
+                    <label for="card-number">Số thẻ:</label>
+                    <br>
+                    <input name="card-number" type = "text">
+                    <br>
+                    <label for="card-name">Tên in trên thẻ:</label>
+                    <br>
+                    <input name="card-name" type="text">
+                    <br>
+                    <label for="card-phone-number">SDT chủ thẻ:</label>
+                    <br>
+                    <input name="card-phone-number" type="text">
+                </section>
+                <br>
+                <button type = "button" class = "checkout-button">
+                    Thanh toán
+                </button>
+            </form>
+            <div>
+                <h2>Đơn hàng đã đặt</h2>
+                <br>
+                <table class="shopping-cart-table">
+                    <tr>
+                        <th>
+                            Hình ảnh
+                        </th>
+                        <th>
+                            Tên sản phẩm
+                        </th>
+                        <th>
+                            Số lượng
+                        </th>
+                        <th>
+                            Giá đơn vị
+                        </th>
+                        <th>
+                            Kích cỡ
+                        </th>
+                        <th>
+                            Xóa sản phẩm khỏi đơn hàng
+                        </th>
+                    </tr>
+                </table>
+                <h2 class="total-price"></h2>
+            </div>
+        </div>
+    </dialog>
+
+
+    <dialog id = "view-order-modal">
+        <button class = "close-modal-button">
+            X
+        </button>
+        <h1>
+            Các đơn hàng đã đặt:
+        </h1>
+        <table class = "table-of-orders">
+            <tr>
+                <th>
+                    ID đơn hàng
+                </th>
+                <th>
+                    Thời gian đặt
+                </th>
+                <th>
+                    Tình trạng đơn hàng
+                </th>
+                <th>
+                    Địa chỉ
+                </th>
+                <th>
+                    Quận
+                </th>
+                <th>
+                    Tỉnh thành
+                </th>
+                <th>
+                    Nút xem chi tiết
+                </th>
+            </tr>
+        </table>
+
+    </dialog>
+
+    <dialog id="view-order-details-modal">
+        <button class="close-modal-button">
+            X
+        </button>
+        <h1>
+            Các đơn hàng đã đặt:
+        </h1>
+        <table class="table-of-products">
+            <tr>
+                <th>
+                    Hình ảnh
+                </th>
+                <th>
+                    Tên sản phẩm
+                </th>
+                <th>
+                    Kích cỡ
+                </th>
+                <th>
+                    Số lượng
+                </th>
+                <th>
+                    Giá đơn vị
+                </th>
+            </tr>
+        </table>
+    
+    </dialog>
+    <script src="scripts/index.js">
+
+    </script>
+</body>
+
+</html>
